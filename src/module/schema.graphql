@@ -1,0 +1,89 @@
+# TYPES
+
+type ImgProxyUrl {
+  url: String!
+}
+
+# ENUMS
+
+enum ResizeType {
+  fit
+  fill
+  auto
+}
+
+enum PositionType {
+  no
+  so
+  ea
+  we
+  noea
+  nowe
+  soea
+  sowe
+  ce
+  re
+}
+
+enum FormatType {
+  jpg
+  jpeg
+  png
+  gif
+  webp
+  ico
+  heif
+  heic
+}
+
+# QUERIES
+
+type Query {
+  imgProxyUrl(
+    url: String!,
+    transformations: TransformationsInput
+  ): ImgProxyUrl
+}
+
+# INPUTS
+
+input TransformationsInput {
+  resize: ResizeType
+  width: Int
+  height: Int
+  enlarge: Int
+  extend: Int
+  dpr: Float
+  sharpen: Float
+  blur: Float
+  quality: String
+  extension: FormatType
+  format: FormatType
+  preset: [String]
+  background: String
+  crop: CropInput
+  gravity: GravityInput
+  watermark: WatermarkInput
+}
+
+input CropInput {
+  width: Int
+  height: Int
+  position: PositionType
+  xOffset: Int
+  yOffset: Int
+}
+
+input GravityInput {
+  position: PositionType
+  xOffset: Int
+  yOffset: Int
+}
+
+input WatermarkInput {
+  opacity: Float
+  scale: Float
+  position: PositionType
+  xOffset: Int
+  yOffset: Int
+}

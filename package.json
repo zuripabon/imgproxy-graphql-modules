@@ -1,0 +1,61 @@
+{
+  "name": "@spotahome/imgproxy-graphql-module",
+  "version": "1.0.0",
+  "description": "A graphQL module to generate an imgproxy URL",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel src --verbose --out-dir lib --ignore 'src/**/*.spec.js','src/**/*.test.js'",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "test:debug": "cross-env NODE_ENV=test node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch --passWithNoTests",
+    "pretest:coverage": "rimraf coverage/*",
+    "test:coverage": "NODE_ENV=test jest --coverage"
+  },
+  "author": "Spotahome",
+  "license": "ISC",
+  "homepage": "https://github.com/spotahome/imgproxy-graphql-module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spotahome/imgproxy-graphql-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spotahome/imgproxy-graphql-module/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@spotahome/eslint-config-spotahome": "^2.0.0",
+    "@spotahome/soyuz-graphql-modules": "^0.1.3",
+    "@testing-library/react": "^8.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-inline-import": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react-hooks": "^1.2.0",
+    "graphql": "^0.12.0 || ^0.13.0 || ^14.0.0",
+    "graphql-tag": "^2.10.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.13.5",
+    "rimraf": "^2.6.3"
+  },
+  "peerDependencies": {
+    "@spotahome/soyuz-graphql-modules": "^0.1.3",
+    "graphql": "^0.12.0 || ^0.13.0 || ^14.0.0"
+  }
+}

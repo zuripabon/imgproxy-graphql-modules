@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+.cache
+lib/
+coverage/
+
+#IDE
+.vscode
+.idea
+
+# Logs
+logs
+*.log
+
+# Coverage directory
+coverage
